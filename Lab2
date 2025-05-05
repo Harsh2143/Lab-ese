@@ -1,0 +1,47 @@
+//Malloc:
+//Dynamic Memory Allocation
+#include<stdio.h>
+#include<stdlib.h>
+void disp(int *p1)
+{
+for(int n=0; n<4; ++n)
+printf("p1[%d]==%d\n",n+1,p1[n]);
+}
+void alloc(int *p2)
+{
+p2=malloc(4*sizeof(int));
+for(int n=0; n<4; ++n)
+p2[n]=n*n;
+disp(p2);
+}
+int main()
+{
+
+int *p=malloc(4*sizeof(int));
+alloc(p);
+return 0;
+}
+
+
+//Calloc:
+//Dynamic Memory Allocation
+#include<stdio.h>
+#include<stdlib.h>
+void disp(int *p1)
+{
+for(int n=0; n<4; ++n)
+printf("p1[%d]==%d\n",n+1,p1[n]);
+}
+void alloc(int *p2)
+{
+p2=calloc(4,sizeof(int));
+for(int n=0; n<4; ++n)
+p2[n]=n*n;
+disp(p2);
+}
+int main()
+{
+int *p=calloc(4,sizeof(int));
+alloc(p);
+return 0;
+}
